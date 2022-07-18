@@ -1,9 +1,9 @@
+require('dotenv').config()
 const express = require('express')
-
-//initialize the app object
 const app = express()
+const PORT = process.env.PORT
 
-
+//ROUTES
 app.get('/', function(req, res){
     res.send('Hello world')
 })
@@ -13,4 +13,4 @@ app.get('*', (req, res) => {
     res.send('404')
 })
 
-app.listen(3000)
+app.listen(PORT)
